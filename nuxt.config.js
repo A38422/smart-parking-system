@@ -26,7 +26,8 @@ export default {
         '@/plugins/view-ui',
         '@/plugins/axios',
         '@/plugins/api',
-        '@/plugins/vue-echarts'
+        '@/plugins/vue-echarts',
+        '@/plugins/event-bus'
     ],
 
     // Auto import components: https://go.nuxtjs.dev/config-components
