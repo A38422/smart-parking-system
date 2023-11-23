@@ -1,0 +1,43 @@
+.campaigns-selections {
+  position: relative;
+  z-index: 10;
+  .campaigns-selected {
+    border: dashed 2px @border-color-base;
+    border-radius: 20px;
+  }
+
+  .campaigns-menu {
+    border-radius: @border-radius-base;
+    box-shadow: @box-shadow;
+    position: absolute;
+    width: 300px;
+    right: 0;
+    top: 50px;
+    background: white;
+    .campaigns-search {
+      padding: @padding-sm @padding-md;
+      .border-b();
+    }
+    .campaigns-summary {
+      padding: @padding-sm @padding-md;
+      .border-t();
+    }
+    .campaigns-list {
+      height: 300px;
+      overflow-y: auto;
+      .campaign-item-active {
+        background: @table-td-hover-bg;
+      }
+      .campaign-item {
+        border: solid 1px @border-color-base;
+        border-top: none;
+        .flex-row();
+        .center();
+        &:hover {
+          background: @table-td-hover-bg;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

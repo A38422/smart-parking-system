@@ -1,0 +1,171 @@
+// Text
+.text-primary {
+  color: @primary-color !important;
+  fill: @primary-color !important;
+}
+
+.text-info {
+  color: @info-color !important;
+  fill: @info-color !important;
+}
+
+.text-secondary {
+  color: @subsidiary-color;
+  fill: @subsidiary-color !important;
+}
+
+.text-warning {
+  color: @warning-color !important;
+  fill: @warning-color !important;
+}
+
+.text-success {
+  color: @success-color !important;
+  fill: @success-color !important;
+  &.icon-hover {
+    &:hover {
+      background: #fff;
+      box-shadow: 0 2px 0 rgba(0, 0, 0, 0.1);
+      border-radius: 50%;
+      padding: 2px;
+      color: darken(@success-color, 5%);
+      transform: scale(1.1);
+    }
+  }
+}
+
+.text-normal {
+  color: @text-color !important;
+}
+
+.text-default {
+  color: @text-color;
+}
+
+.text-error {
+  color: @error-color !important;
+  fill: @error-color !important;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.text-muted {
+  color: @text-color;
+}
+
+// Extend
+.text-positive {
+  color: @success-color !important;
+  fill: @success-color !important;
+}
+
+.text-negative {
+  color: @subsidiary-color !important;
+  fill: @subsidiary-color !important;
+}
+
+.text-white {
+  color: white;
+}
+
+.semi-bold {
+  font-weight: 600;
+}
+
+.typo-big-number {
+  line-height: 1;
+  font-size: 45px;
+  font-weight: 500;
+}
+
+.typo-section-header {
+  text-transform: uppercase;
+  font-size: @font-size-large;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.typo-name-header {
+  font-size: @font-size-large;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.typo-semi-bold {
+  font-size: @font-size-base;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.font-size-small {
+  font-size: @font-size-small;
+}
+
+.fs-lg {
+  font-size: 1.2rem;
+}
+
+.typo-text-subsidiary {
+  font-size: @font-size-base;
+  line-height: @font-size-base;
+}
+
+.typo-text-sub-count {
+  font-size: 11px;
+}
+
+.text-ellipsis {
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.typo-number-stats {
+  font-size: @font-size-h1;
+  font-weight: 600;
+  line-height: 1;
+  &.h2 {
+    font-size: @font-size-h2;
+  }
+}
+
+.typo-profile-name {
+  .typo-semi-bold();
+  font-size: @font-size-h2;
+}
+
+.highlight-search {
+  em {
+    color: @error-color;
+    font-style: normal;
+  }
+}
+
+.news-item {
+  em {
+    color: @error-color;
+  }
+}
+
+.mention-info-card {
+  em {
+    color: @error-color;
+  }
+}
+
+.source-info-card {
+  em {
+    color: @error-color;
+  }
+}
+
+.break-word {
+  word-break: break-word;
+}
+
+.ivu-table-cell {
+  word-break: break-word;
+}

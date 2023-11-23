@@ -1,0 +1,77 @@
+.fb-login,
+.custom-footer {
+  .ivu-modal-body {
+    padding: 0;
+  }
+  .footer {
+    border-top: 1px solid #e8eaec;
+    padding: 12px 15px 12px 15px;
+    text-align: right;
+  }
+}
+
+.upload-modal {
+  max-height: 700px;
+  overflow: auto;
+  .modal-loader {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    img {
+      display: flex;
+      justify-self: center;
+    }
+  }
+  .detail-modal {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    .origin {
+      display: grid;
+      img {
+        width: 300px;
+        height: auto;
+        justify-self: center;
+        border-radius: 10px;
+      }
+    }
+
+    .list-face {
+      .choose-face {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        //gap: 10px;
+      }
+      .ivu-radio-wrapper {
+        margin: 0;
+        min-height: 120px;
+        min-width: 120px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .ivu-radio {
+        display: none;
+      }
+      img {
+        border-radius: 10px;
+      }
+      .select {
+        border: #2c60ff solid 3px;
+      }
+      .smooth {
+        opacity: 0.5;
+      }
+    }
+
+    .future {
+      margin: 10px 0;
+      button {
+        width: 100%;
+        font-size: 20px;
+        font-weight: bold;
+        border-radius: 20px;
+      }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+    "version": "1.0.0",
+    "private": true,
+    "scripts": {
+        "dev": "nuxt",
+        "build": "nuxt build",
+        "start": "nuxt start",
+        "generate": "nuxt generate"
+    },
+    "dependencies": {
+        "@nuxt/content": "^1.0.0",
+        "@nuxtjs/axios": "^5.13.6",
+        "@nuxtjs/composition-api": "^0.33.1",
+        "@nuxtjs/pwa": "^3.3.5",
+        "core-js": "^3.25.3",
+        "echarts": "^5.4.2",
+        "html2pdf.js": "^0.10.1",
+        "jspdf": "^2.5.1",
+        "less": "3.11.1",
+        "less-loader": "4.1.0",
+        "moment": "^2.29.4",
+        "nuxt": "^2.15.8",
+        "particles.js": "^2.0.0",
+        "view-design": "^4.7.0",
+        "vue": "^2.7.10",
+        "vue-echarts": "^6.5.5",
+        "vue-server-renderer": "^2.7.10",
+        "vue-template-compiler": "^2.7.10"
+    },
+    "devDependencies": {
+        "@babel/eslint-parser": "^7.23.3",
+        "@nuxtjs/eslint-config": "^11.0.0",
+        "@nuxtjs/eslint-module": "^3.1.0",
+        "eslint": "^8.54.0",
+        "eslint-plugin-nuxt": "^4.0.0",
+        "prettier": "^3.1.0"
+    }
+}

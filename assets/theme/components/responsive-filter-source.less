@@ -1,0 +1,50 @@
+@media (min-width: 587px) {
+  .btn-load-more-mobile {
+    display: none;
+  }
+  .filter-pages-section,
+  .filter-groups-section {
+    .flex-row();
+    .center();
+    .space-between();
+    margin-bottom: 15px;
+    .filter-box-source {
+      .flex-row();
+      .center();
+      .select-inner {
+        min-width: 230px;
+      }
+      .search-inner {
+        margin: 0 0 0 10px;
+      }
+    }
+  }
+}
+@media (max-width: 586px) {
+  .loading {
+    display: none;
+  }
+  .btn-load-more-mobile {
+    display: block;
+  }
+  .filter-pages-section,
+  .filter-groups-section {
+    .flex-column();
+    margin-bottom: 15px;
+    .label-filter-source {
+      margin: 0 0 10px 0;
+    }
+    .typo-section-header {
+      margin-bottom: 10px;
+    }
+    .filter-box-source {
+      .flex-column();
+      .auto-complete {
+        width: 100%;
+      }
+      .search-inner {
+        margin: 10px 0;
+      }
+    }
+  }
+}

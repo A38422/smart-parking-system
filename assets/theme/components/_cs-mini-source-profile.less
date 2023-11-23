@@ -1,0 +1,35 @@
+.cs-mini-source-profile {
+  .px(@space-lg);
+  .py();
+  border: 1px solid @border-color-base;
+  border-radius: 6px;
+  .close-icon {
+    display: none;
+  }
+
+  &.closable {
+    position: relative;
+    &:hover {
+      .close-icon {
+        display: inline-block;
+      }
+    }
+  }
+}
+
+.cs-mini-source-compare {
+  .px(@space-lg);
+  .py();
+  .close-icon {
+    display: inline-block;
+  }
+
+  &.closable {
+    position: relative;
+    &:hover {
+      .close-icon {
+        display: inline-block;
+      }
+    }
+  }
+}

@@ -1,0 +1,40 @@
+@size-avatar-news: 42px;
+@size-avatar-comment: 30px;
+.cs-avatar {
+  .ivu-avatar-string {
+    top: 26%;
+  }
+  font-size: 30px;
+  width: 90px;
+  height: 90px;
+}
+.cs-avatar-news {
+  .border-radius();
+  .flex-row();
+  .center();
+  .middle();
+  width: @size-avatar-news;
+  height: @size-avatar-news;
+  font-size: @size-avatar-news / 2;
+  background-color: @avatar-bg;
+  color: #ffffff;
+}
+
+.cs-avatar-comment {
+  .flex-row();
+  .center();
+  .middle();
+  .border();
+  border-radius: 50%;
+  width: @size-avatar-comment;
+  height: @size-avatar-comment;
+  font-size: @size-avatar-comment / 2;
+  background-color: @avatar-bg;
+  color: #ffffff;
+}
+
+.cs-avatar-theme {
+  color: #fff;
+  background-color: @primary-color;
+  //background-color: transparent;
+}

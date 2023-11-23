@@ -1,0 +1,31 @@
+.cs-news-footer-actions {
+  gap: 10px;
+}
+.cs-button-activable {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  font-weight: 500;
+  height: 40px;
+  border-radius: 3px;
+  cursor: pointer;
+  &:hover {
+    background-color: #f4f5f7;
+  }
+  .hidden-on-active {
+    display: inline;
+  }
+  .show-on-active {
+    display: none;
+  }
+  &-active {
+    color: @primary-color;
+    .hidden-on-active {
+      display: none !important;
+    }
+    .show-on-active {
+      display: inline !important;
+    }
+  }
+}

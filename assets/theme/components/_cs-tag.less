@@ -1,0 +1,32 @@
+// Component: CsTag
+
+.cs-tag {
+  padding: 5px 12px 5px 30px;
+  background: #fff;
+  &:hover {
+    border-left-color: @primary-color;
+    border-right-color: @primary-color;
+  }
+  position: relative;
+  .border-radius();
+  &::after {
+    position: absolute;
+    content: ' ';
+    width: 10px;
+    height: 10px;
+    left: 10px;
+    top: 35%;
+    border: solid 1px @text-color;
+    border-radius: 50%;
+  }
+  &.tag-selected {
+    background: #fff;
+    &:hover {
+      box-shadow: 0 2px 0 rgba(0, 0, 0, 0.01);
+    }
+    &::after {
+      border: solid 1px @primary-color;
+      background: @primary-color;
+    }
+  }
+}

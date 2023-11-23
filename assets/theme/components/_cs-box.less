@@ -1,0 +1,42 @@
+.card-header {
+  .flex-row();
+  .center();
+  .pb();
+  &--bordered {
+    .border-b();
+    border-width: @border-width-base;
+  }
+}
+
+.cs-box {
+  .border();
+  .border-radius();
+  padding: 12px;
+  background: #fff;
+  position: relative;
+  .box-container {
+    position: relative;
+    z-index: 9;
+  }
+}
+
+.cs-config-box {
+  .py(@space-sxl);
+  border-bottom: solid 2px #dfe1e6;
+  //border-top: solid 2px #DFE1E6;
+}
+
+.cs-config-box:last-child {
+}
+
+.cs-dashed-box {
+  .px(@space-xl);
+  .py(@space-xl);
+  border: dashed 2px #dfe1e6;
+  border-radius: @border-radius-small;
+  .ivu-slider-marks {
+    .ivu-slider-marks-item:nth-child(2) {
+      width: 25px;
+    }
+  }
+}

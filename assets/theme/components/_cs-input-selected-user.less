@@ -1,0 +1,21 @@
+.cs-input-selected-user {
+  display: inline-flex;
+  flex-direction: row;
+  .center();
+  .space-between();
+  width: 100%;
+  height: @input-height-base;
+  line-height: @line-height-base;
+  padding: @input-padding-vertical-base @input-padding-horizontal;
+  padding-right: @input-padding-vertical-base !important;
+  font-size: @font-size-base;
+  border: 2px solid @input-border-color;
+  border-radius: @btn-border-radius;
+  color: @input-color;
+  background-color: @input-bg;
+  position: relative;
+
+  &.large {
+    .input-large();
+  }
+}

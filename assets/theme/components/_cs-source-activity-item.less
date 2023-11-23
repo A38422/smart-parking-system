@@ -1,0 +1,17 @@
+.content-log {
+  transition: 0.2s;
+  &:hover {
+    background-color: @input-disabled-bg;
+    cursor: pointer;
+  }
+}
+.active-activity {
+  .content-log {
+    background-color: @input-disabled-bg;
+  }
+}
+
+.content-log-mention {
+  height: 500px;
+  overflow-y: auto;
+}

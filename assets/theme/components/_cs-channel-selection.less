@@ -1,0 +1,91 @@
+.cs-channel-selection {
+  .flex-row();
+  .center();
+  justify-content: space-between;
+  &.default {
+    height: @btn-height-base;
+    line-height: @btn-height-base;
+    .channel-default();
+  }
+  &.large {
+    height: @btn-height-large;
+    line-height: @btn-height-large;
+    .channel-large();
+  }
+  .channel-default {
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+  .channel-large {
+    svg {
+      width: 24px;
+      height: 26px;
+    }
+  }
+  .channel {
+    .flex-row();
+    .center();
+    padding: 10px;
+    height: 100%;
+    cursor: pointer;
+    border: 2px solid #dfe1e6;
+    border-left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    &:first-child {
+      border-left: 2px solid #dfe1e6;
+      border-radius: 6px 0 0 6px;
+      &:before {
+        width: 0;
+      }
+    }
+    &:last-child {
+      border-radius: 0 6px 6px 0;
+    }
+    &:before {
+      content: '';
+      position: absolute;
+      width: 2px;
+      background: transparent;
+      height: calc(100% + 4px);
+      left: -2px;
+    }
+    &:hover {
+      svg {
+        fill: #0052cc;
+      }
+    }
+  }
+
+  @media (max-width: 1320px) {
+    .channel {
+      padding: 5px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .channel {
+      &:before {
+        height: 100%;
+      }
+    }
+  }
+  .channel-selected {
+    font-weight: bold;
+    border-color: #0052cc;
+    &:first-child {
+      border-color: #0052cc;
+    }
+    &:before {
+      background: #0052cc;
+    }
+    svg {
+      fill: #0052cc;
+    }
+  }
+}

@@ -1,0 +1,41 @@
+.price-cards-wrapper {
+  .flex-row();
+
+  h1 {
+    margin: 0;
+  }
+  .price-title {
+    height: 80px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-bottom: 1px solid #efefef;
+  }
+  .features {
+    max-width: 380px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    list-style: none;
+    li {
+      line-height: 40px;
+      font-size: 16px;
+      font-weight: 600;
+      border-bottom: 1px dashed #f3f3f3;
+    }
+  }
+  .price-card {
+    flex: 1;
+    min-width: 230px;
+    .price-info {
+      .align-center();
+    }
+  }
+  .price-info .equal-features li {
+    line-height: 40px;
+    font-size: 16px;
+    font-weight: 600;
+    border-bottom: 1px dashed #f3f3f3;
+    list-style: none;
+  }
+}

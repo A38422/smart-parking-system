@@ -1,0 +1,114 @@
+.cs-source-profile {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  &--top {
+    &--wallpaper {
+      position: relative;
+      border-top-left-radius: 6px;
+      border-top-right-radius: 6px;
+      border: 1px solid @border-color-base;
+      border-bottom: 0;
+      background-size: cover;
+      height: 65px;
+      .ivu-avatar,
+      .avatar-military,
+      .avatar-user {
+        position: absolute;
+        bottom: -15px;
+        box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      .outlink {
+        position: absolute;
+        right: 0;
+      }
+    }
+    &--name {
+      .px(@space-lg);
+      .flex-row();
+      .space-between();
+      position: relative;
+      border-left: 1px solid @border-color-base;
+      border-right: 1px solid @border-color-base;
+      h3 {
+        position: relative;
+        .ivu-icon {
+          display: none;
+          &.verified {
+            display: inline-block;
+            position: absolute;
+            top: -3px;
+            margin-left: @space-xxs;
+            color: rgb(0, 82, 204);
+          }
+        }
+      }
+    }
+  }
+  &--body {
+    .px(@space-lg);
+    min-height: 130px;
+    border-left: 1px solid @border-color-base;
+    border-right: 1px solid @border-color-base;
+    flex: 1;
+    &--info {
+      padding-top: 15px;
+      p {
+        margin-bottom: @space-xs;
+      }
+    }
+    &--stats {
+      padding-top: @space-lg;
+    }
+    &--interactive {
+      margin-top: @space-lg;
+      .--content {
+        padding: @space-lg 0;
+      }
+    }
+  }
+  &--footer {
+    .px(@space-sm);
+    .py();
+    border: 1px solid @border-color-base;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    //display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    .ivu-btn,
+    .btn-monitor {
+      flex: 1;
+    }
+    .ivu-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .cs-btn-inline {
+      .flex-row();
+      .middle();
+      .ivu-poptip-footer {
+        .ivu-btn {
+          display: inline-block;
+        }
+      }
+    }
+    .ivu-spin {
+      margin-right: 6px;
+      svg {
+        width: 22px;
+        height: 22px;
+      }
+    }
+    .ivu-btn .ivu-icon {
+      font-size: 24px !important;
+    }
+    .ivu-btn-large .ivu-icon {
+      font-size: 24px;
+    }
+  }
+}

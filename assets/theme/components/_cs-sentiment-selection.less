@@ -1,0 +1,49 @@
+.sentiment-group {
+  display: flex;
+  flex-direction: row;
+  .sentiment-icon {
+    flex: 1;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    background: #fff;
+    border: 2px solid #dfe1e6;
+    border-left: 0;
+    position: relative;
+    .semi-bold();
+    &:first-child {
+      border-left: 2px solid #dfe1e6;
+      border-radius: 3px 0 0 3px;
+      &:before {
+        width: 0;
+      }
+    }
+    &:last-child {
+      border-radius: 0 3px 3px 0;
+    }
+    &:before {
+      content: '';
+      position: absolute;
+      width: 2px;
+      background: transparent;
+      height: calc(100% + 4px);
+      left: -2px;
+    }
+    &:hover {
+      .box-sh-xs();
+    }
+    &--active {
+      .box-sh-xs();
+      color: #0052cc;
+      border-color: #0052cc;
+      &:first-child {
+        border-color: #0052cc;
+      }
+      &:before {
+        background: #0052cc;
+      }
+    }
+  }
+}
