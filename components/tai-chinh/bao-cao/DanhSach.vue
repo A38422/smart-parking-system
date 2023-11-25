@@ -554,10 +554,6 @@ export default {
     margin-left: 10px;
 }
 
-.mr-10 {
-    margin-right: 10px;
-}
-
 .mr-5 {
     margin-right: 5px;
 }
@@ -572,13 +568,6 @@ export default {
     align-content: center;
     justify-content: space-between;
     margin-bottom: 20px;
-
-    .input-search {
-        /*flex: 1;*/
-        /*min-width: 150px;*/
-        /*max-width: 300px;*/
-        width: 200px;
-    }
 }
 
 .fs-16 {

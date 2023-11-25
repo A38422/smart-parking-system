@@ -283,7 +283,7 @@
 
 <script>
 import { mapGetters } from 'vuex'
-import { educations, roles } from '../../constants/dataSelect'
+import { educations, roles } from '@/constants/dataSelect'
 
 export default {
     name: 'UpdateModal',
@@ -674,10 +674,6 @@ export default {
 .flex-row {
     display: flex;
     flex-direction: row;
-}
-
-.center {
-    align-items: center;
 }
 
 .search-in-select {

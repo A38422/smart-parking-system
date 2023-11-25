@@ -49,6 +49,7 @@ module.exports = {
         'no-unused-vars': 'off',
         'vue/first-attribute-linebreak': 'off',
         'vue/require-prop-types': 'off',
+        'vue/no-multiple-template-root': 'off',
         quotes: 'off',
     }
 }

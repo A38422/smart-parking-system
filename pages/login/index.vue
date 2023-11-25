@@ -4,17 +4,17 @@
             ref="loginForm"
             :model="vm"
             :rules="rules"
-            :style="{ width: '100%' }"
+            class="w-100"
         >
-            <div class="flex-column middle mb-md">
+            <div class="flex-column center mb-sm">
                 <img
                     src="@/static/logo.png"
-                    :style="{ width: '120px' }"
+                    style="width: 120px"
                     alt=""
                 />
-                <span :style="{ 'font-size': '18px', 'font-weight': '600' }"
-                    >ĐĂNG NHẬP</span
-                >
+                <span class="semi-bold fs-lg mt-xs">
+                    ĐĂNG NHẬP
+                </span>
             </div>
             <FormItem label="Tài khoản" prop="username">
                 <Input
@@ -43,17 +43,17 @@
                 </Alert>
             </div>
 
-            <FormItem class="mt-50">
+            <FormItem class="mt-sxl">
                 <Button
                     :loading="loading"
-                    type="success"
-                    :style="{ width: '100%' }"
+                    type="primary"
+                    class="w-100"
                     @click="login"
                 >
                     Đăng nhập
                 </Button>
             </FormItem>
-            <div :style="{ 'text-align': 'center' }">
+            <div class="align-center">
                 <span> Chưa có tài khoản? </span>
                 <NuxtLink to="/login">Đăng ký</NuxtLink>
             </div>
@@ -188,34 +188,5 @@ export default {
     .ivu-input-suffix {
         z-index: 3;
     }
-}
-
-.flex-column {
-    display: flex;
-    flex-direction: column;
-}
-
-.middle {
-    align-items: center;
-}
-
-.center {
-    justify-content: center;
-}
-
-.mb-sm {
-    margin-bottom: 10px;
-}
-
-.mb-md {
-    margin-bottom: 20px;
-}
-
-.mt-sm {
-    margin-top: 10px;
-}
-
-.mt-50 {
-    margin-top: 50px;
 }
 </style>

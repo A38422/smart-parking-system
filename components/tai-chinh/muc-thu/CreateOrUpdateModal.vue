@@ -64,7 +64,7 @@
 </template>
 
 <script>
-import { years } from '../../../constants/dataSelect'
+import { years } from '@/constants/dataSelect'
 
 export default {
     props: {
@@ -284,15 +284,6 @@ export default {
 
 .mx-5 {
     margin: 0 5px;
-}
-
-.flex-row {
-    display: flex;
-    flex-direction: row;
-}
-
-.center {
-    align-items: center;
 }
 
 .search-in-select {

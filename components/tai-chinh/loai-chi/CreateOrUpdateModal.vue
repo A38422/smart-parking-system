@@ -233,10 +233,6 @@ export default {
     flex-direction: row;
 }
 
-.center {
-    align-items: center;
-}
-
 .search-in-select {
     margin: 5px;
 }

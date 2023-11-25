@@ -7,10 +7,17 @@
                         <img src="@/static/logo.png" alt=""/>
                     </NuxtLink>
                 </div>
-                <div class="layout-nav">
-                    {{ user && user.name ? user.name : 'Nguyễn Văn A' }}
-                    <Icon type="md-arrow-dropdown" size="20" />
-                </div>
+                <Dropdown class="layout-nav"
+                          trigger="click"
+                          @on-click="handleClickItem">
+                    <span>
+                        {{ user && user.name ? user.name : 'Nguyễn Văn A' }}
+                        <Icon type="md-arrow-dropdown" size="20"></Icon>
+                    </span>
+                    <DropdownMenu slot="list">
+                        <DropdownItem name="logout">Đăng xuất</DropdownItem>
+                    </DropdownMenu>
+                </Dropdown>
             </Header>
 
             <Layout class="flex">
@@ -38,7 +45,7 @@
 
                 <Layout>
                     <Content class="content-layout">
-                        <Nuxt/>
+                        <Nuxt class="container"/>
                     </Content>
                 </Layout>
             </Layout>
@@ -78,6 +85,7 @@ export default {
     watch: {
         $route: {
             deep: true,
+            immediate: true,
             handler() {
                 for (let i = 0; i < this.menu.length; i++) {
                     if (this.menu[i].path === this.$route.path) {
@@ -90,15 +98,14 @@ export default {
     },
 
     created() {
-        for (let i = 0; i < this.menu.length; i++) {
-            if (this.menu[i].path === this.$route.path) {
-                this.activeSidebar = i
-                break
-            }
-        }
+
     },
 
-    methods: {}
+    methods: {
+        handleClickItem(name) {
+            if (name === 'logout') this.$router.push('/login')
+        }
+    }
 }
 </script>
 <style lang="less">
@@ -131,6 +138,7 @@ export default {
 
 .layout-nav {
     margin: auto 0;
+    line-height: 0;
     color: #031E39;
     transition: .3s all;
     cursor: pointer;
@@ -184,5 +192,12 @@ export default {
 .content-layout {
     padding: 16px;
     background: #ffffff;
+}
+
+.container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 </style>

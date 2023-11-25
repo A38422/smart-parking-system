@@ -1,5 +1,5 @@
 <template>
-    <div class="list-account">
+    <div>
         <div class="header-table">
             <div :style="{ display: 'flex', gap: '10px' }">
                 <div>
@@ -28,7 +28,7 @@
                 </div>
             </div>
             <Button v-if="isAdmin" type="success" @click="openModal(false)">
-                <Icon type="md-add" size="18" />
+                <Icon type="md-add" size="18"/>
                 Thêm mới
             </Button>
         </div>
@@ -68,7 +68,8 @@
                         <DropdownMenu slot="list">
                             <DropdownItem name="pw">Đổi mật khẩu</DropdownItem>
                             <DropdownItem name="role"
-                                >Thay đổi vai trò</DropdownItem
+                            >Thay đổi vai trò
+                            </DropdownItem
                             >
                             <DropdownItem name="delete">Xóa</DropdownItem>
                         </DropdownMenu>
@@ -507,35 +508,13 @@ export default {
 }
 </script>
 <style lang="less">
-.list-account {
-    height: 100%;
-    width: 100%;
+.custom-navigate {
     display: flex;
-    flex-direction: column;
-
-    .custom-navigate {
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-        margin-top: 20px;
-    }
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 20px;
 }
 
-.ml-10 {
-    margin-left: 10px;
-}
-
-.mr-10 {
-    margin-right: 10px;
-}
-
-.mr-5 {
-    margin-right: 5px;
-}
-
-.cursor {
-    cursor: pointer;
-}
 
 .header-table {
     display: flex;
@@ -543,17 +522,5 @@ export default {
     align-content: center;
     justify-content: space-between;
     margin-bottom: 20px;
-
-    .input-search {
-        /*flex: 1;*/
-        /*min-width: 150px;*/
-        /*max-width: 300px;*/
-        width: 200px;
-    }
-}
-
-.text-primary {
-    color: #0052cc;
-    fill: #0052cc;
 }
 </style>
