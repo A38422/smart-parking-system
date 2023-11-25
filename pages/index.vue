@@ -1,15 +1,9 @@
 <template>
     <div class="container">
-        <Spin v-if="loading" size="large" fix></Spin>
-        <div
-            v-else-if="dataTable && dataTable.length > 0"
-            :style="{
-                height: '100%',
-                width: '100%',
-                display: 'flex',
-                flexDirection: 'column',
-            }"
-        ></div>
+        <Spin v-if="loading" size="large"></Spin>
+        <div v-else-if="dataTable && dataTable.length > 0"
+             class="h-100 w-100 flex flex-column">
+        </div>
         <div v-else>Không có dữ liệu</div>
     </div>
 </template>
@@ -25,38 +19,10 @@ export default {
         }
     },
 
-    head() {
-        return {}
-    },
-
     computed: {},
 
     created() {
         this.getAllData()
-
-        this.$Notice.open({
-            title: 'Notification title',
-            desc: 'Here is the notification description. Here is the notification description. ',
-            duration: 0
-        });
-
-        this.$Notice.success({
-            title: 'Success title',
-            desc: 'Here is the notification description. Here is the notification description. ',
-            duration: 0
-        });
-
-        this.$Notice.warning({
-            title: 'Warning title',
-            desc: 'Here is the notification description. Here is the notification description. ',
-            duration: 0
-        });
-
-        this.$Notice.error({
-            title: 'Error title',
-            desc: 'Here is the notification description. Here is the notification description. ',
-            duration: 0
-        });
     },
 
     methods: {
@@ -87,13 +53,5 @@ export default {
 
 .font-origin {
     font-family: 'Inter', sans-Arial, serif !important;
-}
-
-.semi-bold {
-    font-weight: 600;
-}
-
-.text-black {
-    color: black;
 }
 </style>

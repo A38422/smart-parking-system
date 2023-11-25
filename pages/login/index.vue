@@ -8,7 +8,7 @@
         >
             <div class="flex-column middle mb-md">
                 <img
-                    src="~/static/icon.png"
+                    src="@/static/logo.png"
                     :style="{ width: '120px' }"
                     alt=""
                 />

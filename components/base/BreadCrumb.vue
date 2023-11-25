@@ -1,5 +1,5 @@
 <template>
-    <Breadcrumb style="margin: 16px 0">
+    <Breadcrumb>
         <BreadcrumbItem v-for="(item, index) in crumbs" :key="index">
             <NuxtLink
                 v-if="item.title + '' !== ''"
@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import breadCrumb from '../../constants/breadCrumb'
+import breadCrumb from '@/constants/breadCrumb'
 
 export default {
     computed: {

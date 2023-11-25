@@ -1,66 +1,34 @@
 const menu = [
     {
-        key: '0',
-        title: 'Trang chủ',
-        icon: 'md-home',
-        styleIcon: '',
+        title: 'Nhật ký xe',
+        // icon: 'ios-create-outline',
+        icon: 'ios-paper',
         path: '/',
     },
     {
-        key: '1',
-        title: 'Cây gia phả',
-        icon: 'ios-git-network',
-        styleIcon: '',
-        children: [
-            {
-                key: '1-1',
-                title: 'Cây',
-                path: '/cay-gia-pha/cay',
-            },
-            {
-                key: '1-2',
-                title: 'Danh sách',
-                path: '/cay-gia-pha/danh-sach',
-            },
-        ],
+        title: 'Quản lý làn xe',
+        icon: 'logo-buffer',
+        path: '/quan-ly-lan-xe',
     },
     {
-        key: '2',
-        title: 'Tài chính',
-        icon: 'logo-usd',
-        styleIcon: '',
-        children: [
-            {
-                key: '2-1',
-                title: 'Thu',
-                path: '/tai-chinh/thu',
-            },
-            {
-                key: '2-2',
-                title: 'Chi',
-                path: '/tai-chinh/chi',
-            },
-            {
-                key: '2-3',
-                title: 'Báo cáo',
-                path: '/tai-chinh/bao-cao',
-            },
-        ],
+        title: 'Quản lý vé xe',
+        icon: 'md-document',
+        path: '/quan-ly-ve-xe',
     },
     {
-        key: '3',
-        title: 'Sự kiện',
-        icon: 'md-calendar',
-        styleIcon: {},
-        path: '/su-kien',
+        title: 'Quản lý thẻ xe',
+        icon: 'md-pricetag',
+        path: '/quan-ly-the-xe',
     },
     {
-        key: '4',
-        title: 'Quản lý tài khoản',
+        title: 'Quản lý người dùng',
         icon: 'ios-people',
-        styleIcon: {},
-        path: '/quan-ly-tai-khoan',
-        isAdmin: true,
+        path: '/quan-ly-nguoi-dung',
+    },
+    {
+        title: 'Cài đặt',
+        icon: 'ios-settings',
+        path: '/cai-dat',
     },
 ]
 export default menu

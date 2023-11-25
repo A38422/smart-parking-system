@@ -21,7 +21,7 @@
                 }"
             />
         </div>
-        <h1>{{ user.name || 'Admin' }}</h1>
+        <h1>{{ user.name || ' Nguyễn Văn A' }}</h1>
         <div>
             <Button type="info" ghost @click="handleOpenModal">
                 <Icon type="md-create" />
@@ -252,7 +252,7 @@ export default {
     .logout {
         a {
             font-size: 16px;
-            color: #515a6e !important;
+            color: #031E39 !important;
         }
 
         a:hover {

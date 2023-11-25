@@ -46,6 +46,9 @@ module.exports = {
         semi: 'off',
         'no-unexpected-multiline': 'off',
         'vue/multiline-html-element-content-newline': 'off',
-        'no-unused-vars': 'off'
+        'no-unused-vars': 'off',
+        'vue/first-attribute-linebreak': 'off',
+        'vue/require-prop-types': 'off',
+        quotes: 'off',
     }
 }

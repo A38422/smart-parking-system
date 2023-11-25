@@ -12,7 +12,7 @@ export default {
             { name: 'format-detection', content: 'telephone=no' },
             { 'http-equiv': 'Content-Security-Policy', content: 'upgrade-insecure-requests' }
         ],
-        link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+        link: [{ rel: 'icon', type: 'image/x-icon', href: '/logo.png' }]
     },
 
     // Global CSS: https://go.nuxtjs.dev/config-css

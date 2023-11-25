@@ -521,10 +521,6 @@ export default {
     }
 }
 
-.flex-1 {
-    flex: 1;
-}
-
 .ml-10 {
     margin-left: 10px;
 }
