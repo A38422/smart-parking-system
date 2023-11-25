@@ -1,7 +1,7 @@
 <template>
     <div class="app">
         <Layout :style="{ minHeight: '100vh' }">
-            <Header class="layout-header-bar">
+            <Header class="layout-header-bar border-b">
                 <div class="layout-logo">
                     <NuxtLink to="/">
                         <img src="@/static/logo.png" alt=""/>
@@ -158,7 +158,6 @@ export default {
     box-shadow: 0 1px 1px rgba(0, 0, 0, .1);
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid #dcdee2;
 }
 
 .menu-item {
@@ -190,14 +189,14 @@ export default {
 }
 
 .content-layout {
-    padding: 16px;
-    background: #ffffff;
+    //padding: 12px;
+    //background: #ffffff;
 }
 
 .container {
     height: 100%;
     width: 100%;
-    display: flex;
-    flex-direction: column;
+    //display: flex;
+    //flex-direction: column;
 }
 </style>

@@ -508,19 +508,5 @@ export default {
 }
 </script>
 <style lang="less">
-.custom-navigate {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    margin-top: 20px;
-}
 
-
-.header-table {
-    display: flex;
-    align-items: center;
-    align-content: center;
-    justify-content: space-between;
-    margin-bottom: 20px;
-}
 </style>

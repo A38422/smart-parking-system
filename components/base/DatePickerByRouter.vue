@@ -2,6 +2,8 @@
 import { convertDateFormat, formatDate } from '~/utils/dateFormatter';
 
 export default {
+    name: "DatePickerByRouter",
+
     data() {
         return {
             timeRange: []

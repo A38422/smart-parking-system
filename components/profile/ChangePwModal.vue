@@ -287,11 +287,6 @@ export default {
     margin: 0 5px;
 }
 
-.flex-row {
-    display: flex;
-    flex-direction: row;
-}
-
 .search-in-select {
     margin: 5px;
 }

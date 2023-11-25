@@ -291,37 +291,5 @@ export default {
 }
 </script>
 <style lang="less">
-.list-muc-thu {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
 
-    .custom-navigate {
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-        margin-top: 20px;
-    }
-}
-
-.ml-10 {
-    margin-left: 10px;
-}
-
-.mr-5 {
-    margin-right: 5px;
-}
-
-.cursor {
-    cursor: pointer;
-}
-
-.header-table {
-    display: flex;
-    align-items: center;
-    align-content: center;
-    justify-content: space-between;
-    margin-bottom: 20px;
-}
 </style>
