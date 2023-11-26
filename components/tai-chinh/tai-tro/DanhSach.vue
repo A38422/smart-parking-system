@@ -47,7 +47,7 @@
                 :loading="loading"
             >
                 <template slot="start_date" slot-scope="{ row }">
-                    <span>{{ formatDate(row.start_date) }}</span>
+                    <span>{{ formatDateLocal(row.start_date) }}</span>
                 </template>
                 <template slot="amount" slot-scope="{ row }">
                     <span>{{ parseAmount(row.amount) }}</span>
@@ -101,7 +101,7 @@
 
 <script>
 import { mapGetters } from 'vuex'
-import { convertDateFormat, formatDate } from '../../../utils/dateFormatter'
+import { convertDateTimeToDatePicker, formatDateLocal } from '../../../utils/dateFormatter'
 import ConfirmModal from '../../base/ConfirmModal'
 import CreateOrUpdateModal from './CreateOrUpdateModal'
 
@@ -199,8 +199,8 @@ export default {
             this.$route.query.start_date_after
         ) {
             this.timeRange = [
-                formatDate(this.$route.query.start_date_before),
-                formatDate(this.$route.query.start_date_after),
+                formatDateLocal(this.$route.query.start_date_before),
+                formatDateLocal(this.$route.query.start_date_after),
             ]
         }
     },
@@ -269,8 +269,8 @@ export default {
         handleChangeTime(value) {
             const query = {
                 ...this.$route.query,
-                start_date_before: convertDateFormat(value[0]),
-                start_date_after: convertDateFormat(value[1]),
+                start_date_before: convertDateTimeToDatePicker(value[0]),
+                start_date_after: convertDateTimeToDatePicker(value[1]),
             }
 
             this.query.page = 1
@@ -312,8 +312,8 @@ export default {
             return `${Number(value)}`.replace(/\B(?=(\d{3})+(?!\d))/g, ',')
         },
 
-        formatDate(value) {
-            return formatDate(value)
+        formatDateLocal(value) {
+            return formatDateLocal(value)
         },
 
         async deleteMucThu() {

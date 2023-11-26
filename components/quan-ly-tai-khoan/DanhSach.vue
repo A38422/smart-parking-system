@@ -112,7 +112,7 @@
 
 <script>
 import { mapGetters } from 'vuex'
-import { convertDateFormat, formatDate } from '~/utils/dateFormatter'
+import { convertDateTimeToDatePicker, formatDateLocal } from '~/utils/dateFormatter'
 import CreateOrUpdateModal from '~/components/quan-ly-tai-khoan/CreateOrUpdateModal.vue'
 import ConfirmModal from '~/components/base/ConfirmModal.vue'
 import ChangePasswordModal from '~/components/quan-ly-tai-khoan/ChangePasswordModal.vue'
@@ -246,8 +246,8 @@ export default {
             this.$route.query.date_joined_after
         ) {
             this.timeRange = [
-                formatDate(this.$route.query.date_joined_before),
-                formatDate(this.$route.query.date_joined_after),
+                formatDateLocal(this.$route.query.date_joined_before),
+                formatDateLocal(this.$route.query.date_joined_after),
             ]
         }
     },
@@ -329,8 +329,8 @@ export default {
         handleChangeTime(value) {
             const query = {
                 ...this.$route.query,
-                date_joined_before: convertDateFormat(value[0]),
-                date_joined_after: convertDateFormat(value[1]),
+                date_joined_before: convertDateTimeToDatePicker(value[0]),
+                date_joined_after: convertDateTimeToDatePicker(value[1]),
             }
 
             this.query.page = 1
@@ -455,7 +455,7 @@ export default {
         },
 
         format(row) {
-            return row && row.date_joined ? formatDate(row.date_joined) : '-'
+            return row && row.date_joined ? formatDateLocal(row.date_joined) : '-'
         },
 
         role(row) {

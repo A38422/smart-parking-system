@@ -1,9 +1,8 @@
 <template>
     <div class="flex-row">
         <NhatKyXeVehicleLog class="flex-1 border-r p-md"/>
-        <BaseLayoutDetail class="p-md" style="width: 300px">
-            123
-        </BaseLayoutDetail>
+
+        <NhatKyXeVehicleDetail class="p-md" style="width: 460px"/>
     </div>
 </template>
 <script>

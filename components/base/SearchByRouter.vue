@@ -39,7 +39,7 @@
         v-model="searchValue"
         search
         clearable
-        placeholder="Search"
+        placeholder="Tìm kiếm"
         class="input-search"
         @on-clear="handleSearch"
         @on-search="handleSearch"

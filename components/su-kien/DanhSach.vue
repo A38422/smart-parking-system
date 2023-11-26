@@ -106,7 +106,7 @@
 
 <script>
 import { mapGetters } from 'vuex'
-import { convertDateFormat, formatDate } from '~/utils/dateFormatter'
+import { convertDateTimeToDatePicker, formatDateLocal } from '~/utils/dateFormatter'
 import CreateOrUpdateModal from '~/components/su-kien/CreateOrUpdateModal.vue'
 import ConfirmModal from '~/components/base/ConfirmModal.vue'
 import DetailAttendeesModal from '~/components/su-kien/DetailAttendeesModal.vue'
@@ -207,8 +207,8 @@ export default {
             this.$route.query.date_after
         ) {
             this.timeRange = [
-                formatDate(this.$route.query.date_before),
-                formatDate(this.$route.query.date_after),
+                formatDateLocal(this.$route.query.date_before),
+                formatDateLocal(this.$route.query.date_after),
             ]
         }
     },
@@ -301,8 +301,8 @@ export default {
         handleChangeTime(value) {
             const query = {
                 ...this.$route.query,
-                date_before: convertDateFormat(value[0]),
-                date_after: convertDateFormat(value[1]),
+                date_before: convertDateTimeToDatePicker(value[0]),
+                date_after: convertDateTimeToDatePicker(value[1]),
             }
 
             this.query.page = 1
@@ -370,7 +370,7 @@ export default {
         },
 
         format(row) {
-            return row && row.date ? formatDate(row.date) : '-'
+            return row && row.date ? formatDateLocal(row.date) : '-'
         },
 
         Attendees(row) {

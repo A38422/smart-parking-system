@@ -7,17 +7,14 @@
                         <img src="@/static/logo.png" alt=""/>
                     </NuxtLink>
                 </div>
-                <Dropdown class="layout-nav"
-                          trigger="click"
-                          @on-click="handleClickItem">
-                    <span>
+
+                <BaseMoreAction :drop-down-menu="dropdownDownMenu"
+                                @on-click="handleClickItem">
+                    <span slot="title">
                         {{ user && user.name ? user.name : 'Nguyễn Văn A' }}
                         <Icon type="md-arrow-dropdown" size="20"></Icon>
                     </span>
-                    <DropdownMenu slot="list">
-                        <DropdownItem name="logout">Đăng xuất</DropdownItem>
-                    </DropdownMenu>
-                </Dropdown>
+                </BaseMoreAction>
             </Header>
 
             <Layout class="flex">
@@ -67,7 +64,12 @@ export default {
             activeSidebar: '0',
             isCollapsed: false,
             openSidebar: true,
-            openNames: []
+            openNames: [],
+            dropdownDownMenu: [
+                { name: 'screen', label: 'Màn hình soát vé' },
+                { name: 'profile', label: 'Thông tin cá nhân' },
+                { name: 'logout', label: 'Đăng xuất' }
+            ]
         }
     },
 
@@ -82,23 +84,28 @@ export default {
         },
     },
 
-    watch: {
-        $route: {
-            deep: true,
-            immediate: true,
-            handler() {
-                for (let i = 0; i < this.menu.length; i++) {
-                    if (this.menu[i].path === this.$route.path) {
-                        this.activeSidebar = i
-                        break
-                    }
-                }
-            }
-        }
-    },
+    // watch: {
+    //     $route: {
+    //         deep: true,
+    //         immediate: true,
+    //         handler() {
+    //             for (let i = 0; i < this.menu.length; i++) {
+    //                 if (this.menu[i].path === this.$route.path) {
+    //                     this.activeSidebar = i
+    //                     break
+    //                 }
+    //             }
+    //         }
+    //     }
+    // },
 
     created() {
-
+        for (let i = 0; i < this.menu.length; i++) {
+            if (this.menu[i].path === this.$route.path) {
+                this.activeSidebar = i
+                break
+            }
+        }
     },
 
     methods: {

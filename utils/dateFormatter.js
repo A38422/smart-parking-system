@@ -1,10 +1,10 @@
 import moment from 'moment'
 
-const formatDate = (value) => {
+const formatDateLocal = (value) => {
     return moment(value).format('DD/MM/YYYY')
 }
 
-const convertDateFormat = (dateString) => {
+const convertDateTimeToDatePicker = (dateString) => {
     if (!dateString || dateString === '') {
         return ''
     }
@@ -28,4 +28,4 @@ const convertDateFormat = (dateString) => {
     )
 }
 
-export { formatDate, convertDateFormat }
+export { formatDateLocal, convertDateTimeToDatePicker }

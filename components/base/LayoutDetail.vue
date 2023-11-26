@@ -2,7 +2,22 @@
 import { defineComponent } from 'vue'
 
 export default defineComponent({
-    name: 'LayoutDetail'
+    name: 'LayoutDetail',
+
+    props: {
+        dropdownDownMenu: {
+            type: Array,
+            default() {
+                return []
+            }
+        }
+    },
+
+    methods: {
+        handleClickItem(value) {
+            this.$emit("on-click-more-action", value)
+        }
+    }
 })
 </script>
 
@@ -13,12 +28,23 @@ export default defineComponent({
                 Chi tiết
             </p>
             <div slot="extend">
-                <Icon type="ios-more" size="20" class="cursor"/>
+                <BaseMoreAction :drop-down-menu="dropdownDownMenu"
+                                @on-click="handleClickItem">
+                    <Icon slot="title" type="ios-more" size="24"/>
+                </BaseMoreAction>
             </div>
         </BaseFixedPageHeader>
 
         <BaseLayoutContainer class="mt-sm flex-1">
-            <slot/>
+            <Row>
+                <Col span="12">
+                    <slot name="info-left"/>
+                </Col>
+                <Col span="12">
+                    <slot name="info-right"/>
+                </Col>
+            </Row>
+            <slot name="info-content"/>
         </BaseLayoutContainer>
     </div>
 </template>

@@ -67,7 +67,7 @@
         </div>
 
         <div class="custom-navigate">
-            <span class="mr-sm">Tổng: {{ total }}</span>
+            <span class="mr-sm">Bản ghi: {{ total }}</span>
             <Page
                 :current="+query.page"
                 :page-size="query.pageSize"

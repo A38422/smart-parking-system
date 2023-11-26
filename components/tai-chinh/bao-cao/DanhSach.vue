@@ -110,7 +110,7 @@
 <script>
 import { mapGetters } from 'vuex'
 import html2pdf from 'html2pdf.js'
-import { formatDate, convertDateFormat } from '~/utils/dateFormatter'
+import { formatDateLocal, convertDateTimeToDatePicker } from '~/utils/dateFormatter'
 
 export default {
     name: 'DanhSach',
@@ -193,8 +193,8 @@ export default {
                     this.$route.query.date_after
                 ) {
                     this.timeRange = [
-                        formatDate(this.$route.query.date_before),
-                        formatDate(this.$route.query.date_after),
+                        formatDateLocal(this.$route.query.date_before),
+                        formatDateLocal(this.$route.query.date_after),
                     ]
                 } else {
                     this.timeRange = []
@@ -212,8 +212,8 @@ export default {
             this.$route.query.date_after
         ) {
             this.timeRange = [
-                formatDate(this.$route.query.date_before),
-                formatDate(this.$route.query.date_after),
+                formatDateLocal(this.$route.query.date_before),
+                formatDateLocal(this.$route.query.date_after),
             ]
         } else {
             const query = {
@@ -328,8 +328,8 @@ export default {
         handleChangeTime(value) {
             const query = {
                 ...this.$route.query,
-                date_before: convertDateFormat(value[0]),
-                date_after: convertDateFormat(value[1]),
+                date_before: convertDateTimeToDatePicker(value[0]),
+                date_after: convertDateTimeToDatePicker(value[1]),
             }
 
             if (query.date_before === '') delete query.date_before
@@ -365,7 +365,7 @@ export default {
         },
 
         format(row) {
-            return formatDate(row.date || row.start_date)
+            return formatDateLocal(row.date || row.start_date)
         },
 
         handleExport() {
@@ -503,9 +503,9 @@ export default {
                 if (this.timeRange && this.timeRange.length > 0) {
                     return `/tai-chinh/thu?search=${
                         row.member.name
-                    }&date_before=${convertDateFormat(
+                    }&date_before=${convertDateTimeToDatePicker(
                         this.timeRange[0],
-                    )}&date_after=${convertDateFormat(this.timeRange[1])}`
+                    )}&date_after=${convertDateTimeToDatePicker(this.timeRange[1])}`
                 } else {
                     return `/tai-chinh/thu?search=${row.member.name}`
                 }
@@ -513,9 +513,9 @@ export default {
                 if (this.timeRange && this.timeRange.length > 0) {
                     return `/tai-chinh/tai-tro?search=${
                         row.sponsor
-                    }&start_date_before=${convertDateFormat(
+                    }&start_date_before=${convertDateTimeToDatePicker(
                         this.timeRange[0],
-                    )}&start_date_after=${convertDateFormat(this.timeRange[1])}`
+                    )}&start_date_after=${convertDateTimeToDatePicker(this.timeRange[1])}`
                 } else {
                     return `/tai-chinh/tai-tro?search=${row.sponsor}`
                 }
@@ -523,9 +523,9 @@ export default {
                 if (this.timeRange && this.timeRange.length > 0) {
                     return `/tai-chinh/chi?search=${
                         row.category.name
-                    }&date_before=${convertDateFormat(
+                    }&date_before=${convertDateTimeToDatePicker(
                         this.timeRange[0],
-                    )}&date_after=${convertDateFormat(this.timeRange[1])}`
+                    )}&date_after=${convertDateTimeToDatePicker(this.timeRange[1])}`
                 } else {
                     return `/tai-chinh/chi?search=${row.category.name}`
                 }

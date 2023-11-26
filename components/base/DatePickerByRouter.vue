@@ -1,5 +1,5 @@
 <script>
-import { convertDateFormat, formatDate } from '~/utils/dateFormatter';
+import { convertDateTimeToDatePicker, formatDateLocal } from '~/utils/dateFormatter';
 
 export default {
     name: "DatePickerByRouter",
@@ -17,8 +17,8 @@ export default {
             this.$route.query.date_after
         ) {
             this.timeRange = [
-                formatDate(this.$route.query.date_before),
-                formatDate(this.$route.query.date_after),
+                formatDateLocal(this.$route.query.date_before),
+                formatDateLocal(this.$route.query.date_after),
             ]
         }
     },
@@ -27,8 +27,8 @@ export default {
         handleChangeTime(value) {
             const query = {
                 ...this.$route.query,
-                date_before: convertDateFormat(value[0]),
-                date_after: convertDateFormat(value[1]),
+                date_before: convertDateTimeToDatePicker(value[0]),
+                date_after: convertDateTimeToDatePicker(value[1]),
             }
 
             if (query.page) delete query.page

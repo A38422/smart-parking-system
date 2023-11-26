@@ -53,10 +53,10 @@
                     Đăng nhập
                 </Button>
             </FormItem>
-            <div class="align-center">
-                <span> Chưa có tài khoản? </span>
-                <NuxtLink to="/login">Đăng ký</NuxtLink>
-            </div>
+<!--            <div class="align-center">-->
+<!--                <span> Chưa có tài khoản? </span>-->
+<!--                <NuxtLink to="/login">Đăng ký</NuxtLink>-->
+<!--            </div>-->
         </Form>
     </div>
 </template>

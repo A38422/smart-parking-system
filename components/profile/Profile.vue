@@ -153,7 +153,7 @@
 
 <script>
 import { mapGetters } from 'vuex'
-import { formatDate } from '@/utils/dateFormatter'
+import { formatDateLocal } from '@/utils/dateFormatter'
 import { mappingEducations, mappingGender } from '@/constants/mapping'
 import UpdateModal from '@/components/profile/UpdateModal.vue'
 import ChangePwModal from '@/components/profile/ChangePwModal.vue'
@@ -187,7 +187,7 @@ export default {
         },
 
         format(date) {
-            return date ? formatDate(date) : '-'
+            return date ? formatDateLocal(date) : '-'
         },
 
         getEducation(value) {
