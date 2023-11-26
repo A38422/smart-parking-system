@@ -84,21 +84,6 @@ export default {
         },
     },
 
-    // watch: {
-    //     $route: {
-    //         deep: true,
-    //         immediate: true,
-    //         handler() {
-    //             for (let i = 0; i < this.menu.length; i++) {
-    //                 if (this.menu[i].path === this.$route.path) {
-    //                     this.activeSidebar = i
-    //                     break
-    //                 }
-    //             }
-    //         }
-    //     }
-    // },
-
     created() {
         for (let i = 0; i < this.menu.length; i++) {
             if (this.menu[i].path === this.$route.path) {
