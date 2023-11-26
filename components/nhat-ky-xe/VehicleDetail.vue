@@ -32,9 +32,7 @@ export default defineComponent({
             <BaseInformationItem span="10" label="Phí gửi" content="3.000 VND"/>
         </Row>
 
-        <div slot="info-content">
-
-        </div>
+        <div slot="info-content"/>
     </BaseLayoutDetail>
 </template>
 
