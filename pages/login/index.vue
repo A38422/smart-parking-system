@@ -78,7 +78,7 @@ export default {
     },
 
     computed: {
-        ...mapGetters(['accessToken', 'refreshToken']),
+        ...mapGetters(['accessToken']),
 
         rules() {
             return {
@@ -89,7 +89,7 @@ export default {
     },
 
     created() {
-        if (this.refreshToken && this.accessToken) {
+        if (this.accessToken) {
             this.logout()
         }
         localStorage.clear()
@@ -155,17 +155,14 @@ export default {
             }
 
             this.$store.commit('DELETE_ACCESS_TOKEN')
-            this.$store.commit('DELETE_REFRESH_TOKEN')
             this.$store.commit('DELETE_ACCESS_EXP')
             this.$store.commit('DELETE_USER')
         },
 
         updateStore(res) {
             this.$store.commit('SET_ACCESS_TOKEN', res.token)
-            this.$store.commit('SET_REFRESH_TOKEN', res.refresh)
             this.$store.commit('SET_ACCESS_EXP', res.expiry)
-            this.$store.commit('SET_USER', res.user.username)
-
+            this.$store.commit('SET_USER', res.user)
             this.$router.push('/')
             this.$Message.success({
                 content: 'Đăng nhập thành công',

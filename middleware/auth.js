@@ -3,9 +3,8 @@ export default function (context) {
 
     try {
         const accessToken = JSON.parse(localStorage.getItem('access_token'))
-        const refreshToken = JSON.parse(localStorage.getItem('refresh_token'))
 
-        if (!accessToken || !refreshToken) context.redirect('/login')
+        if (!accessToken) context.redirect('/login')
     } catch (e) {
         context.redirect('/login')
     }
