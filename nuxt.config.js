@@ -10,7 +10,7 @@ export default {
             { name: 'viewport', content: 'width=device-width, initial-scale=1' },
             { hid: 'description', name: 'description', content: '' },
             { name: 'format-detection', content: 'telephone=no' },
-            { 'http-equiv': 'Content-Security-Policy', content: 'upgrade-insecure-requests' }
+            // { 'http-equiv': 'Content-Security-Policy', content: 'upgrade-insecure-requests' }
         ],
         link: [{ rel: 'icon', type: 'image/x-icon', href: '/logo.png' }]
     },
@@ -54,8 +54,8 @@ export default {
     // Axios module configuration: https://go.nuxtjs.dev/config-axios
     axios: {
         // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
-        baseURL: process.env.BASE_API_URL || 'http://localhost:8000',
-        browserBaseURL: process.env.BASE_API_URL || 'http://localhost:8000'
+        baseURL: process.env.BASE_API_URL || 'http://103.176.146.159:18448',
+        browserBaseURL: process.env.BASE_API_URL || 'http://103.176.146.159:18448'
     },
 
     // PWA module configuration: https://go.nuxtjs.dev/pwa
@@ -95,6 +95,6 @@ export default {
 
     env: {
         baseURL: process.env.BASE_URL || 'http://localhost:3000',
-        baseApiUrl: process.env.BASE_API_URL || 'http://localhost:8000'
+        baseApiUrl: process.env.BASE_API_URL || 'http://103.176.146.159:18448'
     }
 }

@@ -6,9 +6,9 @@ export default function ({ $axios, redirect, store }) {
     $axios.setHeader('Content-Type', 'application/json')
 
     $axios.onRequest((config) => {
-        $axios.setToken(store.getters.accessToken, 'Bearer')
+        $axios.setToken(store.getters.accessToken, 'Token')
 
-        console.log('Making request to ' + config.url)
+        console.log('Making request to: ' + config.url)
     })
 
     $axios.onError((error) => {

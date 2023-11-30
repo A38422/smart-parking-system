@@ -1,11 +1,29 @@
-<script>
-
-</script>
-
 <template>
-    <div></div>
+    <div class="flex-row">
+        <QuanLyTheXeVehicleLog class="flex-1 border-r p-md"/>
+
+        <QuanLyTheXeVehicleDetail class="p-md" style="width: 460px"/>
+    </div>
 </template>
 
-<style scoped lang="less">
+<script>
+export default {
+    data() {
+        return {
+
+        }
+    },
+
+    created() {
+
+    },
+
+    methods: {
+
+    },
+}
+</script>
+
+<style lang="less">
 
 </style>
