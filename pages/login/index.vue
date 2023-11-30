@@ -69,8 +69,8 @@ export default {
     data() {
         return {
             vm: {
-                username: '',
-                password: '',
+                username: 'admin',
+                password: 'Admin@1235!!',
             },
             error: '',
             loading: false,
@@ -121,6 +121,7 @@ export default {
                         const res = await this.$axios.$post(this.$api.LOGIN, {
                             ...this.vm,
                         })
+
                         this.updateStore(res)
                         this.loading = false
                     } catch (e) {
@@ -160,11 +161,11 @@ export default {
         },
 
         updateStore(res) {
-            this.$store.commit('SET_ACCESS_TOKEN', res.access)
+            this.$store.commit('SET_ACCESS_TOKEN', res.token)
             this.$store.commit('SET_REFRESH_TOKEN', res.refresh)
-            this.$store.commit('SET_REFRESH_TOKEN', res.refresh)
-            this.$store.commit('SET_ACCESS_EXP', res.access_exp)
-            this.$store.commit('SET_USER', res.user)
+            this.$store.commit('SET_ACCESS_EXP', res.expiry)
+            this.$store.commit('SET_USER', res.user.username)
+
             this.$router.push('/')
             this.$Message.success({
                 content: 'Đăng nhập thành công',
