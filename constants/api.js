@@ -1,6 +1,6 @@
 const apiUrl = {
     // account
-    LOGIN: 'api/login/',
+    LOGIN: '/api/v1/auth/login',
     LOGOUT: 'api/logout/',
 
     // upload

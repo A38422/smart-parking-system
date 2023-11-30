@@ -35,60 +35,60 @@
 
         <div :style="{ width: '70%', margin: '7% 0 7% 20%' }">
             <Row :gutter="30">
-                <Col span="12">
+                <Col :span="12">
                     <Row>
-                        <Col span="6">Thế hệ</Col>
+                        <Col :span="6">Thế hệ</Col>
                         <Col>{{ user.generation || '-' }}</Col>
                     </Row>
                     <br />
                     <Row>
-                        <Col span="6">Họ và tên</Col>
+                        <Col :span="6">Họ và tên</Col>
                         <Col>{{ user.name || '-' }}</Col>
                     </Row>
                     <br />
                     <Row>
-                        <Col span="6">Giới tính</Col>
+                        <Col :span="6">Giới tính</Col>
                         <Col>{{ gender(user.gender) }}</Col>
                     </Row>
                     <br />
                     <Row>
-                        <Col span="6">Ngày sinh</Col>
+                        <Col :span="6">Ngày sinh</Col>
                         <Col>{{ format(user.bdate) }}</Col>
                     </Row>
                     <br />
                     <Row>
-                        <Col span="6">Ngày mất</Col>
+                        <Col :span="6">Ngày mất</Col>
                         <Col>{{ format(user.ddate) }}</Col>
                     </Row>
                     <br />
                     <Row>
-                        <Col span="6">Email</Col>
+                        <Col :span="6">Email</Col>
                         <Col>{{ user.email || '-' }}</Col>
                     </Row>
                     <br />
                     <Row>
-                        <Col span="6">Số điện thoại</Col>
+                        <Col :span="6">Số điện thoại</Col>
                         <Col>{{ user.phone || '-' }}</Col>
                     </Row>
                 </Col>
-                <Col span="12">
+                <Col :span="12">
                     <Row>
-                        <Col span="8">Địa chỉ</Col>
+                        <Col :span="8">Địa chỉ</Col>
                         <Col>{{ user.address || '-' }}</Col>
                     </Row>
                     <br />
                     <Row>
-                        <Col span="8">Bố</Col>
+                        <Col :span="8">Bố</Col>
                         <Col>{{ user.fid ? user.fid.name : '-' }}</Col>
                     </Row>
                     <br />
                     <Row>
-                        <Col span="8">Mẹ</Col>
+                        <Col :span="8">Mẹ</Col>
                         <Col>{{ user.mid ? user.mid.name : '-' }}</Col>
                     </Row>
                     <br />
                     <Row>
-                        <Col span="8">Vợ/chồng</Col>
+                        <Col :span="8">Vợ/chồng</Col>
                         <Col
                             >{{
                                 user.pids && user.pids.length > 0
@@ -99,17 +99,17 @@
                     </Row>
                     <br />
                     <Row>
-                        <Col span="8">Thông tin gia đình</Col>
+                        <Col :span="8">Thông tin gia đình</Col>
                         <Col>{{ user.family_info || '-' }}</Col>
                     </Row>
                     <br />
                     <Row>
-                        <Col span="8">Học vấn</Col>
+                        <Col :span="8">Học vấn</Col>
                         <Col>{{ getEducation(user.education) }}</Col>
                     </Row>
                     <br />
                     <Row>
-                        <Col span="8">Thành tựu</Col>
+                        <Col :span="8">Thành tựu</Col>
                         <Col>{{ user.achievement || '-' }}</Col>
                     </Row>
                 </Col>

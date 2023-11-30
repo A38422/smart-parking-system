@@ -162,7 +162,6 @@ export default {
         updateStore(res) {
             this.$store.commit('SET_ACCESS_TOKEN', res.access)
             this.$store.commit('SET_REFRESH_TOKEN', res.refresh)
-            this.$store.commit('SET_REFRESH_TOKEN', res.refresh)
             this.$store.commit('SET_ACCESS_EXP', res.access_exp)
             this.$store.commit('SET_USER', res.user)
             this.$router.push('/')

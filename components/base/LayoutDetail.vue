@@ -37,10 +37,10 @@ export default defineComponent({
 
         <BaseLayoutContainer class="mt-sm flex-1">
             <Row>
-                <Col span="12">
+                <Col :span="12">
                     <slot name="info-left"/>
                 </Col>
-                <Col span="12">
+                <Col :span="12">
                     <slot name="info-right"/>
                 </Col>
             </Row>
