@@ -3,7 +3,7 @@ const menu = [
         title: 'Nhật ký xe',
         // icon: 'ios-create-outline',
         icon: 'ios-paper',
-        path: '/',
+        path: '/nhat-ky-xe',
     },
     {
         title: 'Quản lý làn xe',

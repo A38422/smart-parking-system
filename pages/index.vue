@@ -1,13 +1,13 @@
 <template>
-    <div class="flex-row">
-        <NhatKyXeVehicleLog class="flex-1 border-r p-md"/>
+    <div>
 
-        <NhatKyXeVehicleDetail class="p-md" style="width: 460px"/>
     </div>
 </template>
 
 <script>
 export default {
+    layout: 'custom',
+
     data() {
         return {
 
