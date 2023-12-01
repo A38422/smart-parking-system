@@ -15,75 +15,46 @@ export default defineComponent({
                     width: '70px',
                 },
                 {
-                    title: 'Vé xe',
+                    title: 'Tên làn',
                     key: 'name',
+                    sortable: true
                 },
                 {
-                    title: 'Loại vé',
+                    title: 'Loại',
                     key: 'type',
                     filters: [
                         {
-                            label: 'Greater than 25',
+                            label: 'Làn ra',
                             value: 1
                         },
                         {
-                            label: 'Less than 25',
+                            label: 'Làn vào',
                             value: 2
                         }
                     ],
-                    filterMultiple: false,
-                    filterMethod (value, row) {
-                        if (value === 1) {
-                            return row.age > 25;
-                        } else if (value === 2) {
-                            return row.age < 25;
-                        }
-                    }
+                },
+                {
+                    title: 'Khu vực',
+                    key: 'status',
                 },
                 {
                     title: 'Trạng thái',
-                    key: 'status',
+                    key: 'number',
                     filters: [
                         {
-                            label: 'Greater than 25',
+                            label: 'Kích hoạt',
                             value: 1
                         },
                         {
-                            label: 'Less than 25',
+                            label: 'Không kích hoạt',
                             value: 2
                         }
                     ],
-                    filterMethod (value, row) {
-                        if (value === 1) {
-                            return row.age > 25;
-                        } else if (value === 2) {
-                            return row.age < 25;
-                        }
-                    }
                 },
                 {
-                    title: 'Biển số',
-                    key: 'number',
-                },
-                {
-                    title: 'TG vào',
+                    title: 'Ngày tạo',
                     key: 'time_in',
                     sortable: true
-                },
-                {
-                    title: 'TG ra',
-                    key: 'time_out',
-                    sortable: true
-                },
-                {
-                    title: 'TG cập nhật',
-                    key: 'time_update',
-                    sortable: true
-                },
-                {
-                    title: 'Phí',
-                    key: 'fee',
-                    // align: 'center',
                 },
             ],
         }

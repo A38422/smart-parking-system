@@ -15,75 +15,92 @@ export default defineComponent({
                     width: '70px',
                 },
                 {
-                    title: 'Vé xe',
-                    key: 'name',
+                    title: 'Thẻ',
+                    key: 'owner_mobile',
                 },
                 {
                     title: 'Loại vé',
-                    key: 'type',
+                    key: 'owner_mobile',
                     filters: [
                         {
-                            label: 'Greater than 25',
+                            label: 'Vé ngày',
                             value: 1
                         },
                         {
-                            label: 'Less than 25',
+                            label: 'Vé tháng',
                             value: 2
                         }
                     ],
                     filterMultiple: false,
                     filterMethod (value, row) {
                         if (value === 1) {
-                            return row.age > 25;
+                            return row.owner_mobile > 25;
                         } else if (value === 2) {
-                            return row.age < 25;
+                            return row.owner_mobile < 25;
                         }
                     }
                 },
                 {
-                    title: 'Trạng thái',
-                    key: 'status',
+                    title: 'Loại xe',
+                    key: 'owner_mobile',
                     filters: [
                         {
-                            label: 'Greater than 25',
+                            label: 'Xe máy',
                             value: 1
                         },
                         {
-                            label: 'Less than 25',
+                            label: 'Xe ôtô',
                             value: 2
+                        }
+                    ],
+                    filterMultiple: false,
+                    filterMethod (value, row) {
+                        if (value === 1) {
+                            return row.owner_mobile > 25;
+                        } else if (value === 2) {
+                            return row.owner_mobile < 25;
+                        }
+                    }
+                },
+                {
+                    title: 'Loại vé',
+                    key: 'type_car',
+                },
+                {
+                    title: 'Biển số đăng ký',
+                    key: 'number_plate',
+                    sortable: true,
+                },
+                {
+                    title: 'Chủ xe',
+                    key: 'name',
+                    sortable: true,
+                },
+                {
+                    title: 'Trạng thái',
+                    key: 'enable',
+                    // align: 'center',
+                    filters: [
+                        {
+                            label: 'Kích hoạt',
+                            value: 1
+                        },
+                        {
+                            label: 'Hủy',
+                            value: 2
+                        },
+                        {
+                            label: 'Mất',
+                            value: 3
                         }
                     ],
                     filterMethod (value, row) {
                         if (value === 1) {
-                            return row.age > 25;
+                            return row.enable > 25;
                         } else if (value === 2) {
-                            return row.age < 25;
+                            return row.enable < 25;
                         }
                     }
-                },
-                {
-                    title: 'Biển số',
-                    key: 'number',
-                },
-                {
-                    title: 'TG vào',
-                    key: 'time_in',
-                    sortable: true
-                },
-                {
-                    title: 'TG ra',
-                    key: 'time_out',
-                    sortable: true
-                },
-                {
-                    title: 'TG cập nhật',
-                    key: 'time_update',
-                    sortable: true
-                },
-                {
-                    title: 'Phí',
-                    key: 'fee',
-                    // align: 'center',
                 },
             ],
         }
@@ -97,13 +114,21 @@ export default defineComponent({
         async getData() {
             try {
                 this.loading = true
-                this.dataTable = await this.$axios.$get(
+                const data = await this.$axios.$get(
                     this.$api.VEHICLES, {
                         params: {
                             rfid_card__isnull: true,
                         }
                     }
                 )
+
+                this.dataTable = data.results.map((item, index) => {
+                    return {
+                        ...item,
+                        stt: index + 1
+                    }
+                })
+                console.log('33333', this.dataTable)
                 this.loading = false
             } catch (e) {
                 console.log('error: ', e)
@@ -131,7 +156,7 @@ export default defineComponent({
     <div class="flex-column">
         <BaseFixedPageHeader>
             <p slot="title" class="fs-lg semi-bold">
-                Quản lý làn xe
+                Quản lý thẻ xe
             </p>
             <div slot="extend">
                 <BaseSearchByRouter/>

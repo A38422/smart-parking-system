@@ -7,8 +7,9 @@ export default defineComponent({
     data() {
         return {
             dropdownDownMenu: [
-                { name: 'lost_ticket', label: 'Vé xe bị mất' },
-                { name: 'check_out', label: 'Xe đã ra khỏi bãi' },
+                { name: 'lost_ticket', label: 'Hủy kích hoạt' },
+                { name: 'check_out', label: 'Xóa' },
+                { name: 'check_out', label: 'Chỉnh sửa' },
             ]
         }
     }
@@ -18,20 +19,20 @@ export default defineComponent({
 <template>
     <BaseLayoutDetail :dropdown-down-menu="dropdownDownMenu">
         <Row slot="info-left">
-            <BaseInformationItem span="10" label="Trạng thái" content="Đã ra"/>
-            <BaseInformationItem span="10" label="Vé xe" content="RFID-19799891"/>
-            <BaseInformationItem span="10" label="Mã truy cập" content="10015"/>
-            <BaseInformationItem span="10" label="TG vào" content="10:45 22/02/2023"/>
-            <BaseInformationItem span="10" label="Biển số DK" content="36B149453"/>
+            <BaseInformationItem span="13" label="Thẻ xe" content="19799891"/>
+            <BaseInformationItem span="13" label="Loại thẻ" content="Vật lý"/>
+            <BaseInformationItem span="13" label="Loại xe" content="xe máy"/>
+            <BaseInformationItem span="13" label="Vé xe" content="Xe máy - vé tháng"/>
+            <BaseInformationItem span="13" label="Loại vé" content="Vé tháng"/>
+            <BaseInformationItem span="13" label="Chủ xe" content="Nguyễn An Nguyên"/>
+            <BaseInformationItem span="13" label="TG hết hạn" content="22/02/2023"/>
+            <BaseInformationItem span="13" label="Biển số DK" content="36B149453"/>
+            <BaseInformationItem span="13" label="SDT chủ" content="097176199"/>
+            <BaseInformationItem span="13" label="Mã truy cập" content="10022"/>
+            <BaseInformationItem span="13" label="Thông tin xe" content="SH màu xanh"/>
+            <BaseInformationItem span="13" label="Trạng thái" content="Mất"/>
+            <BaseInformationItem span="13" label="Lý do" content="Khách hàng làm mất"/>
         </Row>
-        <Row slot="info-right">
-            <BaseInformationItem span="10" label="Ca trực" content="Nguyễn Văn A"/>
-            <BaseInformationItem span="10" label="Loại vé" content="Xe máy - vé ngày"/>
-            <BaseInformationItem span="10" label="Định danh" content="Thẻ xe"/>
-            <BaseInformationItem span="10" label="TG ra" content="10:45 23/02/2023"/>
-            <BaseInformationItem span="10" label="Phí gửi" content="3.000 VND"/>
-        </Row>
-
         <div slot="info-content"/>
     </BaseLayoutDetail>
 </template>
