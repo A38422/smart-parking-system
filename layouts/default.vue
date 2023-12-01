@@ -95,6 +95,7 @@ export default {
 
     methods: {
         handleClickItem(name) {
+            if (name === 'screen') this.$router.push('/')
             if (name === 'logout') this.$router.push('/login')
             if (name === 'profile') this.$router.push('/profile')
         }
