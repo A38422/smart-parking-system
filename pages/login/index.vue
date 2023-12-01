@@ -140,7 +140,7 @@ export default {
         async logout() {
             try {
                 await this.$axios.$post(this.$api.LOGOUT, {
-                    refresh_token: this.refreshToken,
+                    token: this.accessToken,
                 })
                 this.handleLogout()
             } catch (e) {
