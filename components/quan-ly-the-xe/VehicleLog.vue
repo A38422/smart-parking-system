@@ -73,7 +73,7 @@ export default defineComponent({
                 },
                 {
                     title: 'Chủ xe',
-                    key: 'name',
+                    key: 'owner_name',
                     sortable: true,
                 },
                 {
