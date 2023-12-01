@@ -19,18 +19,12 @@ export default defineComponent({
         ...mapGetters(['user']),
     },
 
-    created() {
-
-    },
-
     methods: {
         handleClickItem(name) {
             if (name === 'logout') this.$router.push('/login')
             if (name === 'profile') this.$router.push('/profile')
             if (name === 'manage') this.$router.push('/nhat-ky-xe')
         },
-
-
     }
 })
 </script>
@@ -53,7 +47,7 @@ export default defineComponent({
                 </BaseMoreAction>
             </Header>
 
-            <Content class="content-layout">
+            <Content class="content-layout" style="position: relative">
                 <Nuxt class="container"/>
             </Content>
         </Layout>

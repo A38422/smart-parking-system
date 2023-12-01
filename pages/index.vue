@@ -1,7 +1,5 @@
 <template>
-    <div>
-
-    </div>
+    <ticket-screen-screens style="position: absolute"/>
 </template>
 
 <script>
