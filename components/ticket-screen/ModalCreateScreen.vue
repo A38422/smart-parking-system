@@ -151,7 +151,7 @@ export default defineComponent({
 
         <template #footer>
             <div class="footer-modal-create-member">
-                <Button type="ghost" @click="handleClose">Đóng</Button>
+                <Button @click="handleClose">Đóng</Button>
                 <Button type="primary" :loading="loading" @click="handleSubmit">
                     Xác nhận
                 </Button>

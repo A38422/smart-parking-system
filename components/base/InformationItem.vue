@@ -6,7 +6,7 @@ export default defineComponent({
 
     props: {
         span: {
-            type: String,
+            type: [String, Number],
             default() {
                 return '8'
             }
