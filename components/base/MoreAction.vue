@@ -30,7 +30,7 @@ export default defineComponent({
             <DropdownItem v-for="(item, index) in dropDownMenu"
                           :key="index"
                           :name="item.name">
-                {{ item.label }}
+                <span :class="item.className">{{ item.label }}</span>
             </DropdownItem>
         </DropdownMenu>
     </Dropdown>

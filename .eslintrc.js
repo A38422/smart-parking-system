@@ -51,5 +51,6 @@ module.exports = {
         'vue/require-prop-types': 'off',
         'vue/no-multiple-template-root': 'off',
         quotes: 'off',
+        'vue/multi-word-component-names': 'off'
     }
 }
