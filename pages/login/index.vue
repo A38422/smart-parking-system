@@ -69,8 +69,8 @@ export default {
     data() {
         return {
             vm: {
-                username: '',
-                password: '',
+                username: 'admin',
+                password: 'Admin@1235!!',
             },
             error: '',
             loading: false,
@@ -78,7 +78,7 @@ export default {
     },
 
     computed: {
-        ...mapGetters(['accessToken', 'refreshToken']),
+        ...mapGetters(['accessToken']),
 
         rules() {
             return {
@@ -89,7 +89,7 @@ export default {
     },
 
     created() {
-        if (this.refreshToken && this.accessToken) {
+        if (this.accessToken) {
             this.logout()
         }
         localStorage.clear()
@@ -121,6 +121,7 @@ export default {
                         const res = await this.$axios.$post(this.$api.LOGIN, {
                             ...this.vm,
                         })
+
                         this.updateStore(res)
                         this.loading = false
                     } catch (e) {
@@ -139,7 +140,7 @@ export default {
         async logout() {
             try {
                 await this.$axios.$post(this.$api.LOGOUT, {
-                    refresh_token: this.refreshToken,
+                    token: this.accessToken,
                 })
                 this.handleLogout()
             } catch (e) {
@@ -154,16 +155,13 @@ export default {
             }
 
             this.$store.commit('DELETE_ACCESS_TOKEN')
-            this.$store.commit('DELETE_REFRESH_TOKEN')
             this.$store.commit('DELETE_ACCESS_EXP')
             this.$store.commit('DELETE_USER')
         },
 
         updateStore(res) {
-            this.$store.commit('SET_ACCESS_TOKEN', res.access)
-            this.$store.commit('SET_REFRESH_TOKEN', res.refresh)
-            this.$store.commit('SET_REFRESH_TOKEN', res.refresh)
-            this.$store.commit('SET_ACCESS_EXP', res.access_exp)
+            this.$store.commit('SET_ACCESS_TOKEN', res.token)
+            this.$store.commit('SET_ACCESS_EXP', res.expiry)
             this.$store.commit('SET_USER', res.user)
             this.$router.push('/')
             this.$Message.success({

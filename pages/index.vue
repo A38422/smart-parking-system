@@ -1,12 +1,11 @@
 <template>
-    <div class="flex-row">
-        <NhatKyXeVehicleLog class="flex-1 border-r p-md"/>
-
-        <NhatKyXeVehicleDetail class="p-md" style="width: 460px"/>
-    </div>
+    <ticket-screen-screens style="position: absolute"/>
 </template>
+
 <script>
 export default {
+    layout: 'custom',
+
     data() {
         return {
 
@@ -22,6 +21,7 @@ export default {
     },
 }
 </script>
+
 <style lang="less">
 
 </style>

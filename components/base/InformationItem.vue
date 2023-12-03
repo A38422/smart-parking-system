@@ -8,7 +8,7 @@ export default defineComponent({
         span: {
             type: [String, Number],
             default() {
-                return 8
+                return '8'
             }
         },
         label: {

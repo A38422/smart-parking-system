@@ -11,7 +11,7 @@
                 <BaseMoreAction :drop-down-menu="dropdownDownMenu"
                                 @on-click="handleClickItem">
                     <span slot="title">
-                        {{ user && user.name ? user.name : 'Nguyễn Văn A' }}
+                        {{ user && user.username ? user.username : 'Admin' }}
                         <Icon type="md-arrow-dropdown" size="20"></Icon>
                     </span>
                 </BaseMoreAction>
@@ -54,7 +54,7 @@ import { mapGetters } from 'vuex'
 import menu from '@/constants/menu'
 
 export default {
-    // middleware: 'auth',
+    middleware: 'auth',
 
     data() {
         return {
@@ -95,7 +95,9 @@ export default {
 
     methods: {
         handleClickItem(name) {
+            if (name === 'screen') this.$router.push('/')
             if (name === 'logout') this.$router.push('/login')
+            if (name === 'profile') this.$router.push('/profile')
         }
     }
 }
