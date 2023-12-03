@@ -23,6 +23,12 @@ export default defineComponent({
                 return ""
             }
         },
+        styleContent: {
+            type: String,
+            default() {
+                return ""
+            }
+        },
     }
 })
 </script>
@@ -30,7 +36,7 @@ export default defineComponent({
 <template>
     <Row class-name="mt-xs">
         <Col :span="span" class="semi-bold">{{ label }}: </Col>
-        <Col>{{ content }}</Col>
+        <Col :class="styleContent">{{ content }}</Col>
     </Row>
 </template>
 
